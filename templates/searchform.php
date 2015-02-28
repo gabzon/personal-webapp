@@ -7,3 +7,9 @@
     </span>
   </div>
 </form>
+
+
+<div class="ui icon input">
+  <input type="text" placeholder="Search...">
+  <i class="search icon"></i>
+</div>

@@ -15,7 +15,7 @@ function presentation_post_type() {
 		'update_item'         => __( 'Update Presentation', 'sage' ),
 		'search_items'        => __( 'Search Presentation', 'sage' ),
 		'not_found'           => __( 'Not found', 'sage' ),
-		'not_found_in_trash'  => __( 'Not found in Trash', 'sage' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'sage' ),		
 	);
 	$rewrite = array(
 		'slug'                => 'presentation',
