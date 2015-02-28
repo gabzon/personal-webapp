@@ -171,4 +171,3 @@ function google_analytics() {
 if (GOOGLE_ANALYTICS_ID) {
   add_action('wp_footer', __NAMESPACE__ . '\\google_analytics', 20);
 }
-

@@ -20,6 +20,14 @@ $sage_includes = [
   'lib/nav.php',                   // Custom nav modifications
   'lib/gallery.php',               // Custom [gallery] modifications
   'lib/extras.php',                // Custom functions
+  'lib/user-social.php',
+  'lib/option-settings.php',
+  'piklist/custom_post_type/book.php',
+  'piklist/custom_post_type/education.php',
+  'piklist/custom_post_type/job.php',
+  'piklist/custom_post_type/project.php',
+  'piklist/custom_post_type/presentation.php',
+  'piklist/custom_post_type/exhibition.php',
 ];
 
 foreach ($sage_includes as $file) {

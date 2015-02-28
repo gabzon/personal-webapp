@@ -28,6 +28,12 @@ use Roots\Sage\Wrapper;
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
         <?php endif; ?>
+
+        <div class="ui buttons">
+  <div class="ui button">un</div>
+  <div class="or" data-text="ou"></div>
+  <div class="ui positive button">deux</div>
+</div>
       </div><!-- /.content -->
     </div><!-- /.wrap -->
     <?php
