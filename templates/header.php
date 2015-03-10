@@ -1,26 +1,26 @@
 <?php use Roots\Sage\Nav; ?>
 
-<div class="navbar navbar-default navbar-fixed-top" >
-  <div class="ui page grid">
-      <div class="column">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header page-scroll">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span class="sr-only"><?= __('Toggle navigation', 'sage'); ?></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-          </div>
 
-          <nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" role="navigation">
+<div class="ui inverted menu">
+    <div class="ui page vertically padded grid">
+        <a class="item" href="<?= esc_url(home_url('/')); ?>">
+            <?php bloginfo('name'); ?>
+        </a>
+        <div class="right menu">
             <?php
-            if (has_nav_menu('primary_navigation')) :
-              wp_nav_menu(['theme_location' => 'primary_navigation', 'walker' => new Nav\SageNavWalker(), 'menu_class' => 'nav navbar-nav navbar-right']);
+            $menu_name = 'primary_navigation'; // this is the registered menu name
+            if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) :
+                $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+                $menu_items = wp_get_nav_menu_items($menu->term_id);
+                foreach ( (array) $menu_items as $key => $menu_item ) :
+                    $class = $menu_item->classes; ?>
+                    <a href="<?php echo $menu_item->url; ?>" class="item <?php if(get_the_ID() == $menu_item->object_id){echo 'active';}else{echo 'bla';}?>">
+                        <?php echo $menu_item->title; ?>
+                    </a>
+                    <?php
+                endforeach;
             endif;
             ?>
-          </nav>
-      </div>
-  </div>
+        </div>
+    </div>
 </div>

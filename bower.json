@@ -1,37 +1,39 @@
 {
-    "name": "sage",
-    "homepage": "https://roots.io/sage/",
-    "authors": [
-        "Ben Word <ben@benword.com>"
-    ],
-    "license": "MIT",
-    "private": true,
-    "dependencies": {
-        "modernizr": "2.8.2",
-        "jquery": "1.11.2",
-        "fontawesome": "~4.3.0",
-        "bootstrap": "~3.3.2",
-        "semantic-ui": "~1.10.3"
+  "name": "sage",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "modernizr": "2.8.2",
+    "jquery": "1.11.2",
+    "fontawesome": "~4.3.0",
+    "bootstrap": "~3.3.2",
+    "semantic-ui": "~1.10.3",
+    "jquery-easing": "*",
+    "classie": "~1.0.1"
+  },
+  "overrides": {
+    "modernizr": {
+      "main": "./modernizr.js"
     },
-    "overrides": {
-        "modernizr": {
-            "main": "./modernizr.js"
-        },
-        "bootstrap": {
-            "main": [
-                "./less/variables.less",
-                "./less/utilities.less",
-                "./less/mixins.less",
-                "./less/forms.less",
-                "./less/navbar.less",
-                "./less/navs.less",
-                "./js/carousel.js",
-                "./fonts/glyphicons-halflings-regular.eot",
-                "./fonts/glyphicons-halflings-regular.svg",
-                "./fonts/glyphicons-halflings-regular.ttf",
-                "./fonts/glyphicons-halflings-regular.woff",
-                "./fonts/glyphicons-halflings-regular.woff2"
-            ]
-        }
+    "bootstrap": {
+      "main": [
+        "./less/variables.less",
+        "./less/utilities.less",
+        "./less/mixins.less",
+        "./less/forms.less",
+        "./less/navbar.less",
+        "./less/navs.less",
+        "./js/carousel.js",
+        "./fonts/glyphicons-halflings-regular.eot",
+        "./fonts/glyphicons-halflings-regular.svg",
+        "./fonts/glyphicons-halflings-regular.ttf",
+        "./fonts/glyphicons-halflings-regular.woff",
+        "./fonts/glyphicons-halflings-regular.woff2"
+      ]
     }
+  }
 }

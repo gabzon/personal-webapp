@@ -11,11 +11,28 @@ piklist('field', array(
    'columns'      => 12,
 ));
 
+$project_city = array(
+    'type'         => 'text',
+    'field'        => 'project_city',
+    'label'        => __('City', 'sage'),
+    'columns'      => 6
+);
+
+$project_country = array(
+    'type'         => 'text',
+    'field'        => 'project_country',
+    'label'        => __('Country', 'sage'),
+    'columns'      => 6
+);
+
 piklist('field', array(
-   'type'         => 'text',
-   'field'        => 'job_location',
-   'label'        => __('City, Country', 'sage'),
-   'columns'      => 12
+    'type'         => 'group',
+    'field'        => 'project_location',
+    'label'        => __('Location','sage'),
+    'fields'       => array(
+        $project_city,
+        $project_country,
+    )
 ));
 
 $job_start_date = array(

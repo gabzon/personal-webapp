@@ -18,16 +18,33 @@ piklist('field', array(
    'columns'      => 12
 ));
 
+$job_city = array(
+    'type'         => 'text',
+    'field'        => 'job_city',
+    'label'        => __('City', 'sage'),
+    'columns'      => 6
+);
+
+$job_country = array(
+    'type'         => 'text',
+    'field'        => 'job_country',
+    'label'        => __('Country', 'sage'),
+    'columns'      => 6
+);
+
 piklist('field', array(
-   'type'         => 'text',
-   'field'        => 'job_location',
-   'label'        => __('City, Country', 'sage'),
-   'columns'      => 12
+    'type'         => 'group',
+    'field'        => 'job_location',
+    'label'        => __('Location','sage'),
+    'fields'       => array(
+        $job_city,
+        $job_country,
+    )
 ));
 
 $job_pourcentage = array(
    'type'         => 'text',
-   'field'        => 'job_pourcentage',
+   'field'        => 'job_percentage',
    'label'        => __('Full Time / Part time','sage'),
    'columns'      => 4
 );
@@ -41,7 +58,7 @@ $job_start_date = array(
 
 $job_end_date = array(
    'type'         => 'datepicker',
-   'field'        => 'school_end_date',
+   'field'        => 'job_end_date',
    'label'        => __('End date', 'sage'),
    'columns'      => 4
 );

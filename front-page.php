@@ -3,18 +3,13 @@
     <?php // get_template_part('templates/content', 'page'); ?>
     <?php // endwhile; ?>
 
-
-
-    <!-- Header -->
-    <header>
-        <div class="ui center aligned header">
-            <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll ui yellow button">Tell Me More</a>
-            </div>
+    <div class="ui center aligned header">
+        <div class="intro-text">
+            <div class="intro-lead-in">Welcome To Our Studio!</div>
+            <div class="intro-heading">It's Nice To Meet You</div>
+            <a href="#services" class="page-scroll ui yellow button">Tell Me More</a>
         </div>
-    </header>
+    </div>
 
 
     <br><br><br>
