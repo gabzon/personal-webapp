@@ -22,12 +22,14 @@ $sage_includes = [
   'lib/extras.php',                // Custom functions
   'lib/user-social.php',
   'lib/option-settings.php',
+  'lib/helper-functions.php',
   'piklist/custom_post_type/book.php',
   'piklist/custom_post_type/education.php',
   'piklist/custom_post_type/job.php',
   'piklist/custom_post_type/project.php',
   'piklist/custom_post_type/presentation.php',
   'piklist/custom_post_type/exhibition.php',
+  'piklist/custom_post_type/award.php',
 ];
 
 foreach ($sage_includes as $file) {
@@ -38,3 +40,17 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+
+/**
+ * Accept svg files
+ * https://css-tricks.com/snippets/wordpress/allow-svg-through-wordpress-media-uploader/
+ * http://www.wpcontent.co.uk/2014/09/enabling-and-using-svg-in-wordpress/
+ * https://www.leighton.com/blog/enable-upload-of-svg-to-wordpress-media-library
+ */
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  $mimes['svgz'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');

@@ -47,3 +47,14 @@ piklist('field', array(
          $school_end_date,
    )
 ));
+
+piklist('field', array(
+    'type' => 'file',
+    'field' => 'education_diploma',
+    'scope' => 'post_meta',
+    'label' => __('Add diploma','sage'),
+    'options' => array(
+        'modal_title' => __('Add diploma','sage'),
+        'button' => __('Add','sage')
+    )
+));

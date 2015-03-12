@@ -21,16 +21,13 @@ get_template_part('templates/header');
 ?>
 
 
-<div class="ui page grid">
-    <div class="column">
-        <?php include Wrapper\template_path(); ?>
-        <?php if (Config\display_sidebar()) : ?>
-            <aside class="sidebar" role="complementary">
-                <?php include Wrapper\sidebar_path(); ?>
-            </aside><!-- /.sidebar -->
-        <?php endif; ?>
-    </div>
-</div>
+<?php include Wrapper\template_path(); ?>
+<?php if (Config\display_sidebar()) : ?>
+    <aside class="sidebar" role="complementary">
+        <?php include Wrapper\sidebar_path(); ?>
+    </aside><!-- /.sidebar -->
+<?php endif; ?>
+
 
 
 <?php
