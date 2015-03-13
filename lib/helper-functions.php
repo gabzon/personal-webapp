@@ -1,11 +1,11 @@
 <?php
 /**
- * Simple PHP age Calculator
- *
- * Calculate and returns age based on the date provided by the user.
- * @param   date of birth('Format:yyyy-mm-dd').
- * @return  age based on date of birth
- */
+* Simple PHP age Calculator
+*
+* Calculate and returns age based on the date provided by the user.
+* @param   date of birth('Format:yyyy-mm-dd').
+* @return  age based on date of birth
+*/
 function ageCalculator($dob){
 	if(!empty($dob)){
 		$birthdate = new DateTime($dob);
@@ -17,7 +17,11 @@ function ageCalculator($dob){
 	}
 }
 
-function printmymessage($x){
-    echo $x;
+function print_tags($id){
+	$posttags = get_the_tags($id);
+	if ($posttags) {
+		foreach($posttags as $tag) {
+			echo $tag->slug . ' ';
+		}
+	}
 }
-?>

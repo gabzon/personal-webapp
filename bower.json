@@ -13,7 +13,8 @@
     "bootstrap": "~3.3.2",
     "semantic-ui": "~1.10.3",
     "jquery-easing": "*",
-    "classie": "~1.0.1"
+    "classie": "~1.0.1",
+    "isotope": "~2.1.1"
   },
   "overrides": {
     "modernizr": {
@@ -34,6 +35,11 @@
         "./fonts/glyphicons-halflings-regular.woff",
         "./fonts/glyphicons-halflings-regular.woff2"
       ]
+    },
+    "isotope":{
+        "main":[
+            "./dist/isotope.pkgd.js"
+        ]
     }
   }
 }

@@ -8,7 +8,7 @@ use Roots\Sage\Wrapper;
 ?>
 
 <?php get_template_part('templates/head'); ?>
-<body id="page-top" class="index" <?php body_class(); ?>>
+<body id="page-top" <?php body_class(); ?>>
 
     <!--[if lt IE 9]>
     <div class="alert alert-warning">
@@ -20,13 +20,27 @@ do_action('get_header');
 get_template_part('templates/header');
 ?>
 
-
-<?php include Wrapper\template_path(); ?>
-<?php if (Config\display_sidebar()) : ?>
-    <aside class="sidebar" role="complementary">
-        <?php include Wrapper\sidebar_path(); ?>
-    </aside><!-- /.sidebar -->
+<?php if(is_page_template('portfolio.php') || is_page_template('curriculum.php') || is_page_template('template-custom.php')): ?>
+    <?php include Wrapper\template_path(); ?>
+    <?php if (Config\display_sidebar()) : ?>
+        <aside class="sidebar" role="complementary">
+            <?php include Wrapper\sidebar_path(); ?>
+        </aside><!-- /.sidebar -->
+    <?php endif; ?>
+<?php else: ?>
+    <div class="ui page grid">
+        <div class="column">
+            <?php include Wrapper\template_path(); ?>
+            <?php if (Config\display_sidebar()) : ?>
+                <aside class="sidebar" role="complementary">
+                    <?php include Wrapper\sidebar_path(); ?>
+                </aside><!-- /.sidebar -->
+            <?php endif; ?>
+        </div>
+    </div>
 <?php endif; ?>
+
+
 
 
 
