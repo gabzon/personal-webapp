@@ -22,12 +22,6 @@
     },
     "bootstrap": {
       "main": [
-        "./less/variables.less",
-        "./less/utilities.less",
-        "./less/mixins.less",
-        "./less/forms.less",
-        "./less/navbar.less",
-        "./less/navs.less",
         "./js/carousel.js",
         "./fonts/glyphicons-halflings-regular.eot",
         "./fonts/glyphicons-halflings-regular.svg",

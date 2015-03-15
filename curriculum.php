@@ -20,44 +20,52 @@ $jobs = get_posts( $args_job );
 ?>
 
 <div id="curriculum">
-    <section class="ui center aligned header" id="curriculum-header" style="background-color:<?php echo $theme_options['colorpicker'] ?>;">
-        <div class="ui small circular image">
-            <?php echo get_avatar( $theme_options['main_email'], '300' ); ?>
-        </div>
-        <br>
-        <h1 class="ui center aligned icon header">
-            <?php echo $theme_options['full_name']; ?>
-        </h1>
-        <?php
-        echo  $theme_options['nationality'] . ", ";
-        $birthday_day = substr($theme_options['birthday'],3,2);
-        $birthday_month = substr($theme_options['birthday'],0,2);
-        $birthday_year = substr($theme_options['birthday'],6);
-        echo date("d F Y",mktime(0,0,0,$birthday_month,$birthday_day,$birthday_year));
-        $dob = $birthday_year . "-" .$birthday_month . "-" . $birthday_day ;
-        echo " (".ageCalculator($dob) ." ". __('years old').")<br>";
-        ?>
-        <br>
-        <div class="ui inverted black button"><a href="mailto:<?php echo $theme_options['main_email']; ?>" class=""><i class="mail icon"></i> Email</a></div>
-        <div class="ui inverted black button"><a href="tel:<?php echo $theme_options['main_phone']; ?>" class=""><i class="call icon"></i> Phone</a></div>
-        <br><br>
-        <div class="ui column centered grid">
-            <div class="ten wide center aligned column">
-                <p class="body-font"><?php echo $theme_options['main_profile']; ?></p>
-                <h3>
-                    <?php
-                    foreach ($languages['language_acronym'] as $l):
-                        echo  $l;
-                        if ($l != end($languages['language_acronym'])):
-                            echo ' | ';
-                        endif;
-                    endforeach;
-                    ?>
-                </h3>
+
+    <section id="curriculum-header" class="ui inverted teal vertical segment">
+        <div class="ui center aligned header">
+            <div class="ui small circular image">
+                <?php echo get_avatar( $theme_options['main_email'], '300' ); ?>
+            </div>
+            <br>
+
+            <h1 class="ui center aligned icon header">
+                <?php echo $theme_options['full_name']; ?>
+            </h1>
+
+            <?php
+            echo  $theme_options['nationality'] . ", ";
+            $birthday_day = substr($theme_options['birthday'],3,2);
+            $birthday_month = substr($theme_options['birthday'],0,2);
+            $birthday_year = substr($theme_options['birthday'],6);
+            echo date("d F Y",mktime(0,0,0,$birthday_month,$birthday_day,$birthday_year));
+            $dob = $birthday_year . "-" .$birthday_month . "-" . $birthday_day ;
+            echo " (".ageCalculator($dob) ." ". __('years old').")<br>";
+            ?>
+
+            <br>
+            <div class="ui inverted black button"><a href="mailto:<?php echo $theme_options['main_email']; ?>" class=""><i class="mail icon"></i> Email</a></div>
+            <div class="ui inverted black button"><a href="tel:<?php echo $theme_options['main_phone']; ?>" class=""><i class="call icon"></i> Phone</a></div>
+            <br><br>
+
+            <div class="ui page grid center aligned">
+                <div class="ten wide column">
+                    <p class="body-font"><?php echo $theme_options['main_profile']; ?></p>
+                    <h3>
+                        <?php
+                        foreach ($languages['language_acronym'] as $l):
+                            echo  $l;
+                            if ($l != end($languages['language_acronym'])):
+                                echo ' | ';
+                            endif;
+                        endforeach;
+                        ?>
+                    </h3>
+                </div>
             </div>
         </div>
     </section>
-
+    <br>
+    <br>
     <div class="ui page grid">
         <div class="column">
             <br>

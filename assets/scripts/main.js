@@ -22,7 +22,12 @@
         // All pages
         'common': {
             init: function() {
-                // JavaScript to be fired on all pages
+                $(function(){
+                    $('.mobile-menu').on('click',function(){
+                        $('#mobile-sidebar')
+                        .sidebar('toggle');
+                    });
+                });
             },
             finalize: function() {
                 // JavaScript to be fired on all pages, after page specific JS is fired
@@ -31,26 +36,6 @@
         // Home page
         'home': {
             init: function() {
-                // jQuery for page scrolling feature - requires jQuery Easing plugin
-                $(function() {
-                    $('a.page-scroll').bind('click', function(event) {
-                        var $anchor = $(this);
-                        $('html, body').stop().animate({
-                            scrollTop: $($anchor.attr('href')).offset().top
-                        }, 1500, 'easeInOutExpo');
-                        event.preventDefault();
-                    });
-                });
-
-                // Highlight the top nav as scrolling occurs
-                $('body').scrollspy({
-                    target: '.navbar-fixed-top'
-                });
-
-                // Closes the Responsive Menu on Menu Item Click
-                $('.navbar-collapse ul li a').click(function() {
-                    $('.navbar-toggle:visible').click();
-                });
 
             },
             finalize: function() {
@@ -70,8 +55,8 @@
                         itemSelector: '.isotope-item'
                     });
                     $('#isotope-filters').on('click', 'button', function() {
-                      var filterValue = $( this ).attr('data-filter');
-                      $container.isotope({ filter: filterValue });
+                        var filterValue = $( this ).attr('data-filter');
+                        $container.isotope({ filter: filterValue });
                     });
                 });
             }

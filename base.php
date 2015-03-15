@@ -8,7 +8,7 @@ use Roots\Sage\Wrapper;
 ?>
 
 <?php get_template_part('templates/head'); ?>
-<body id="page-top" <?php body_class(); ?>>
+<body <?php body_class(); ?>>
 
     <!--[if lt IE 9]>
     <div class="alert alert-warning">
@@ -20,7 +20,7 @@ do_action('get_header');
 get_template_part('templates/header');
 ?>
 
-<?php if(is_page_template('portfolio.php') || is_page_template('curriculum.php') || is_page_template('template-custom.php')): ?>
+<?php if(is_page_template('portfolio.php') || is_page_template('curriculum.php') || is_page_template('template-custom.php')|| is_front_page()): ?>
     <?php include Wrapper\template_path(); ?>
     <?php if (Config\display_sidebar()) : ?>
         <aside class="sidebar" role="complementary">
@@ -39,8 +39,6 @@ get_template_part('templates/header');
         </div>
     </div>
 <?php endif; ?>
-
-
 
 
 
